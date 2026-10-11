@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" role="img" aria-label="Gallery">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e9d5c1"/><stop offset="1" stop-color="#cfa98a"/></linearGradient>
+<pattern id="wood" width="40" height="12" patternUnits="userSpaceOnUse"><path d="M0 6 q10 -4 20 0 t20 0" stroke="#7a4a22" stroke-width="2" fill="none"/></pattern>
+<radialGradient id="light" cx=".3" cy=".25" r=".8"><stop offset="0" stop-color="#fff" stop-opacity=".35"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
+</defs>
+<rect width="800" height="800" fill="url(#bg)"/>
+<rect width="800" height="800" fill="url(#light)"/>
+<ellipse cx="400" cy="468" rx="230" ry="207" fill="#000" opacity=".18"/><circle cx="400" cy="450" r="230" fill="#fbf8f3"/><circle cx="400" cy="450" r="179.4" fill="none" stroke="#efe6da" stroke-width="6"/><circle cx="320" cy="430" r="80" fill="#000" opacity=".1"/><circle cx="320" cy="420" r="80" fill="#f7c6d0"/><ellipse cx="295" cy="390" rx="22" ry="12" fill="#fff" opacity=".6"/><circle cx="480" cy="430" r="80" fill="#000" opacity=".1"/><circle cx="480" cy="420" r="80" fill="#bfe3b4"/><ellipse cx="455" cy="390" rx="22" ry="12" fill="#fff" opacity=".6"/><circle cx="400" cy="540" r="80" fill="#000" opacity=".1"/><circle cx="400" cy="530" r="80" fill="#f6e3a1"/><ellipse cx="375" cy="500" rx="22" ry="12" fill="#fff" opacity=".6"/>
+<text x="780" y="780" font-family="Arial, sans-serif" font-size="18" fill="#fff" fill-opacity="0.55" text-anchor="end">placeholder</text>
+</svg>

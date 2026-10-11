@@ -1,0 +1,12 @@
+node_modules
+.next
+.data
+.env.local
+.env
+public/uploads
+*.tsbuildinfo
+next-env.d.ts
+screenshots
+
+# personal run notes
+uzbread.text

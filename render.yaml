@@ -1,0 +1,44 @@
+# Render Blueprint (https://render.com/docs/blueprint-spec) — free web service.
+# Database: Neon (DATABASE_URL). The Telegram bot runs inside this service
+# (TELEGRAM_MODE=webhook) because Render's free plan has no background workers.
+# Values marked `sync: false` are asked for once, when the Blueprint is created.
+services:
+  - type: web
+    name: sushi-madi
+    runtime: node
+    plan: free
+    region: frankfurt
+    buildCommand: npm ci --include=dev && npm run build
+    # applies new database migrations, then serves the site on $PORT
+    startCommand: npm run start:render
+    autoDeployTrigger: commit
+    envVars:
+      - key: NODE_VERSION
+        value: "24"
+      - key: DATABASE_URL
+        sync: false
+      - key: DATABASE_SSL
+        value: "true"
+      - key: DATABASE_POOL_MAX
+        value: "5"
+      - key: SESSION_SECRET
+        generateValue: true
+      # NEXT_PUBLIC_SITE_URL is optional: it defaults to Render's https://<name>.onrender.com
+      # address. Set it if you attach your own domain.
+      - key: SMS_PROVIDER
+        value: telegram
+      # Click / Payme appear at checkout only once their credentials are added.
+      - key: PAYMENT_METHODS
+        value: cash,card_on_delivery,click,payme
+      - key: TELEGRAM_MODE
+        value: webhook
+      - key: TELEGRAM_BOT_TOKEN
+        sync: false
+      - key: TELEGRAM_BOT_USERNAME
+        value: sushi_madi_bot
+      - key: TELEGRAM_ADMIN_CHAT_IDS
+        sync: false
+      - key: GEOCODER_PROVIDER
+        value: local
+      - key: COURIER_PROVIDER
+        value: in_house
